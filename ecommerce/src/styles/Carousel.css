@@ -1,0 +1,32 @@
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  cursor: grab;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  margin: 0 10px;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+}
+
+.carousel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.carousel img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
