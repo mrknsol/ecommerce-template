@@ -1,32 +1,30 @@
-.carousel {
-  display: flex;
-  overflow-x: scroll;
-  cursor: grab;
+:root {
+  --primary: #6a59ff;
+  --white: #ffffff;
+  --bg: #f5f5f5;
 }
 
-.carousel-item {
-  flex: 0 0 auto;
-  margin: 0 10px;
-  border-radius: 10px;
-  transition: transform 0.2s;
+.container-surface {
+  max-width: 80rem;
+  margin: 0 auto;
 }
 
-.carousel-item:hover {
-  transform: scale(1.05);
-}
-
-.carousel-card {
-  display: flex;
-  flex-direction: column;
+.swiper_container {
+  height: 30rem;
+  padding: 1rem 0;
+  position: relative;
   align-items: center;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 20px;
+  overflow: hidden;
 }
 
-.carousel img {
-  width: 200px;
-  height: auto;
-  border-radius: 10px;
+.swiper-slide {
+  width: 20rem;
+  height: 30rem;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
 }

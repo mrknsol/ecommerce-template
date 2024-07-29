@@ -1,35 +1,57 @@
 .navbar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: white;
   padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.navbar-links {
-  display: flex;
-  align-items: center;
-  margin-right: 5px;
-  gap: 100px;
-}
-
 .navbar-brand {
   font-size: 24px;
   font-weight: bold;
-  margin-right: 100px;
+}
+
+.navbar-links {
+  margin-right: 50px;
+  display: flex;
+  gap: 100px;
 }
 
 .navbar-links a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-size: 18px;
-  transition: color 0.3s ease;
+}
+
+.navbar-links .login-link {
+  display: flex;
+  align-items: center;
+  margin-left: 480px;
+}
+
+.navbar-links .login-link i {
+  margin-right: 5px;
+}
+
+.navbar-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-icon {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar-icon:hover {
+  color: #ddd;
 }
 
 .navbar-links a:hover {
-  color: #ddd;
+  text-decoration: underline;
 }

@@ -1,59 +1,48 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import { EffectCoverflow, Autoplay } from 'swiper/modules';
+
 import '../styles/Carousel.css';
 import products from '../product';
 
 const Carousel = () => {
-  const carouselRef = useRef(null);
 
-  const handleMouseDown = (e) => {
-    const carousel = carouselRef.current;
-    carousel.style.cursor = 'grabbing';
-    carousel.style.userSelect = 'none';
-    carousel.mouseDown = true;
-    carousel.startX = e.pageX - carousel.offsetLeft;
-    carousel.scrollLeft = carousel.scrollLeft;
-  };
-
-  const handleMouseUp = () => {
-    const carousel = carouselRef.current;
-    carousel.style.cursor = 'grab';
-    carousel.style.removeProperty('user-select');
-    carousel.mouseDown = false;
-  };
-
-  const handleMouseMove = (e) => {
-    const carousel = carouselRef.current;
-    if (!carousel.mouseDown) return;
-    const x = e.pageX - carousel.offsetLeft;
-    const walk = (x - carousel.startX) * 2;
-    carousel.scrollLeft = carousel.scrollLeft - walk;
-  };
-
+  const images = [
+    require('../assets/hats.jpeg'),
+    require('../assets/jackets.jpeg'),
+    require('../assets/jeans.jpeg'),
+    require('../assets/shoes.jpeg'),
+    require('../assets/tshirt.jpeg'),
+  ];
   return (
-    <div
-      className="carousel"
-      ref={carouselRef}
-      onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseUp}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
-    >
-      {Object.keys(products).map((category) => {
-        const items = products[category];
-        if (items && items.length > 0) {
-          return (
-            <Link to={`/catalog?category=${category}`} key={category} className="carousel-item">
-              <div className="carousel-card">
-                <h2>{category.charAt(0).toUpperCase() + category.slice(1)}</h2>
-                <img src={items[0].image} alt={category} />
-              </div>
-            </Link>
-          );
-        } else {
-          return null;
-        }
-      })}
+    <div className="container-surface" style={{ userSelect: 'none' }}>
+      <Swiper
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 1.5,
+        }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        modules={[EffectCoverflow, Autoplay]}
+        className="swiper_container"
+      >
+        {images.map((image, index) => (
+          <SwiperSlide key={index}>
+            <img src={image} alt={`slide ${index + 1}`} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
