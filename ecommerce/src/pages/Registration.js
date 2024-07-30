@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import '../styles/pageStyle/Registration.css';
 import { registerUser } from '../redux/authSlice';
@@ -9,6 +9,7 @@ const Registration = () => {
     const newUser = useRef(new signUpUser())
     const dispatch = useDispatch();
     const error = useSelector(state => state.auth.error)
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,9 +20,12 @@ const Registration = () => {
           Password: newUser.current.Password.value,
           ConfirmPassword: newUser.current.Password.value}));
 
+          alert("Successufully Register!");
+
         if (error) {
           alert(error)
         }
+        navigate("/login")
     }
 
     return (
@@ -72,7 +76,7 @@ const Registration = () => {
             <button className="font-medium text-base text-violet-500">Forgot password</button>
           </div>
           <div className="mt-4 flex flex-col gap-y-3">
-            <button 
+            <button
               onClick={handleSubmit}
               className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out transform py-3 bg-violet-500 rounded-xl text-white font-bold text-lg"
             >

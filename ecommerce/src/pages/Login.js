@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/pageStyle/Login.css';
 import signInUser from "../models/signInUser";
 import { loginUser } from '../redux/authSlice';
@@ -9,6 +9,7 @@ const Login = () => {
   const userInfo = useRef(new signInUser());
   const dispatch = useDispatch();
   const error = useSelector(state => state.auth.error);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +21,8 @@ const Login = () => {
     if (error) {
       alert(error);
     }
+    alert('Successufully Logged in')
+    navigate("/home")    
   };
   
 

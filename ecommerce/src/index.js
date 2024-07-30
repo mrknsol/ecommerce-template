@@ -7,6 +7,8 @@ import routes from './routes';
 import "./index.css";
 const router = createBrowserRouter(routes);
 
+console.log(localStorage.getItem('user'));
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
