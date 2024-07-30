@@ -5,7 +5,7 @@ const authSlice = createSlice({
   initialState: {
     isAuthenticated: false,
     user: JSON.parse(localStorage.getItem('user')) || [],
-    currentUser: null,
+    currentUser: JSON.parse(localStorage.getItem('currentUser')) || null,
     error: null,
   },
   reducers: {
@@ -16,37 +16,34 @@ const authSlice = createSlice({
         state.currentUser = user;
         state.isAuthenticated = true;
         state.error = null;
+        localStorage.setItem('currentUser', JSON.stringify(user));
       } else {
         state.error = 'Invalid email or password';
       }
     },
     logoutUser: (state) => {
-      state.user = [];
-      state.error = null;
       state.isAuthenticated = false;
       state.currentUser = null;
-      localStorage.removeItem('user');
+      state.error = null;
+      localStorage.removeItem('currentUser'); // Remove current user from localStorage
     },
     registerUser: (state, action) => {
       const newUser = action.payload;
 
-      if (!Array.isArray(state.user)) {
-        state.user = [];
-      }
-
       if (!state.user.find(user => user.Email === newUser.Email)) {
-        if(newUser.Password === newUser.ConfirmPassword) {
-        state.user.push({
-          UserName: newUser.UserName,
-          Email: newUser.Email,
-          Password: newUser.Password
-        });
+        if (newUser.Password === newUser.ConfirmPassword) {
+          state.user.push({
+            UserName: newUser.UserName,
+            Email: newUser.Email,
+            Password: newUser.Password
+          });
+          state.isAuthenticated = true;
+          state.error = null;
+          localStorage.setItem('user', JSON.stringify(state.user));
+          localStorage.setItem('currentUser', JSON.stringify(state.user[state.user.length - 1])); // Store newly registered user
         } else {
-          state.error = 'Password do not match'
+          state.error = 'Password does not match';
         }
-
-        localStorage.setItem('user', JSON.stringify(state.user));
-        state.error = null;
       } else {
         state.error = 'User already exists';
         console.log(state.user);

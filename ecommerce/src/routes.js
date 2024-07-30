@@ -5,6 +5,7 @@ import AboutUs from './pages/AboutUs';
 import Login from './pages/Login'
 import Registration from './pages/Registration'
 import Layout from './components/Layout';
+import Cart from './pages/Cart'
 
 
 const layoutChildren = [
@@ -25,8 +26,8 @@ const layoutChildren = [
     element: <News />
   },
   {
-    path: 'about-us',
-    element: <AboutUs />
+    path: 'cart',
+    element: <Cart />
   },
   {
     path: 'login',
@@ -35,7 +36,8 @@ const layoutChildren = [
   {
     path: 'registration',
     element: <Registration />
-  }
+  },
+  
 ]
 
 const routes = [

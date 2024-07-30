@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,4 +54,7 @@
 
 .navbar-links a:hover {
   text-decoration: underline;
-}
+} */
+ html {
+  scroll-behavior: smooth;
+ }

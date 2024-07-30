@@ -1,7 +1,7 @@
-import hatsImage from './assets/hats.jpeg';
-import jacketsImage from './assets/jackets.jpeg';
-import jeansImage from './assets/jeans.jpeg';
-import shoesImage from './assets/shoes.jpeg';
+import hatsImage from './assets/images.jpeg';
+import jacketsImage from './assets/jeans1.jpg';
+import jeansImage from './assets/shirt1.jpg';
+import shoesImage from './assets/shoes2.jpeg';
 
 
 const products = {
@@ -27,7 +27,7 @@ const products = {
       name: 'iPhone 15',
       description: 'The latest iPhone model.',
       price: 999,
-      image: jeansImage,
+      image: jacketsImage,
     },
     {
       id: 4,
@@ -43,7 +43,7 @@ const products = {
       name: 'Nike Hat',
       description: 'A stylish Nike hat.',
       price: 25,
-      image: hatsImage
+      image: jeansImage
     },
     {
       id: 2,
@@ -59,7 +59,7 @@ const products = {
       name: 'iPhone 15',
       description: 'The latest iPhone model.',
       price: 999,
-      image: jeansImage
+      image: shoesImage
     },
     {
       id: 4,
@@ -98,7 +98,7 @@ const products = {
       name: 'Samsung Galaxy A51',
       description: 'A popular Samsung phone.',
       price: 499,
-      image: shoesImage
+      image: jeansImage
     }
   ],
   peripherials: [
@@ -107,7 +107,7 @@ const products = {
       name: 'Nike Hat',
       description: 'A stylish Nike hat.',
       price: 25,
-      image: hatsImage
+      image: jacketsImage
     },
     {
       id: 2,
@@ -123,7 +123,7 @@ const products = {
       name: 'iPhone 15',
       description: 'The latest iPhone model.',
       price: 999,
-      image: jeansImage
+      image: shoesImage
     },
     {
       id: 4,
@@ -155,7 +155,7 @@ const products = {
       name: 'iPhone 15',
       description: 'The latest iPhone model.',
       price: 999,
-      image: jeansImage
+      image: jacketsImage
     },
     {
       id: 4,

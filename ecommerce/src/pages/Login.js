@@ -21,7 +21,6 @@ const Login = () => {
     if (error) {
       alert(error);
     }
-    alert('Successufully Logged in')
     navigate("/home")    
   };
   

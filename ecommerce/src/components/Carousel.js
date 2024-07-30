@@ -3,27 +3,28 @@ import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import { EffectCoverflow, Autoplay, Navigation, Pagination} from 'swiper/modules';
+import { EffectCoverflow, Autoplay} from 'swiper/modules';
 
 import '../styles/Carousel.css';
 import products from '../product';
 
 const Carousel = () => {
 
-  const images = [
-    require('../assets/hats.jpeg'),
-    require('../assets/jackets.jpeg'),
-    require('../assets/jeans.jpeg'),
-    require('../assets/shoes.jpeg'),
-    require('../assets/tshirt.jpeg'),
-  ];
+  const slides = Object.keys(products).map(key => {
+    const firstProduct = products[key][0];
+    return {
+      category: key,
+      image: firstProduct.image,
+    };
+  });
   return (
     <div className="container-surface" style={{ userSelect: 'none' }}>
-      <Swiper
+    <Swiper
       grabCursor={true}
       centeredSlides={true}
       loop={true}
       slidesPerView={'auto'}
+      spaceBetween={20}
       coverflowEffect={{
         rotate: 0,
         stretch: 0,
@@ -34,17 +35,20 @@ const Carousel = () => {
         delay: 5000,
         disableOnInteraction: false,
       }}
-      Navigation
-      modules={[EffectCoverflow, Autoplay, Navigation, Pagination]}
+      navigation
+      modules={[EffectCoverflow, Autoplay]}
       className="swiper_container"
     >
-      {Object.products.map((image, index) => (
-        <SwiperSlide key={index}>
-          <img src={image} alt={`slide ${index + 1}`} />
+      {slides.map((slide, index) => (
+        <SwiperSlide key={index} className="swiper-slide">
+          <Link to={`/catalog?category=${slide.category}`} className="swiper-link">
+            <img src={slide.image} alt={`Slide ${index + 1}`} />
+            <div className="category-label">{slide.category}</div>
+          </Link>
         </SwiperSlide>
       ))}
     </Swiper>
-    </div>
+  </div>
   );
 };
 

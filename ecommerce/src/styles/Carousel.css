@@ -10,8 +10,9 @@
 }
 
 .swiper_container {
-  height: 30rem;
+  height: 400px;
   padding: 1rem 0;
+  margin-bottom: 20px;
   position: relative;
   align-items: center;
   overflow: hidden;

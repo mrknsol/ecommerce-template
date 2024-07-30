@@ -20,8 +20,6 @@ const Registration = () => {
           Password: newUser.current.Password.value,
           ConfirmPassword: newUser.current.Password.value}));
 
-          alert("Successufully Register!");
-
         if (error) {
           alert(error)
         }
