@@ -2,10 +2,9 @@ import Home from './pages/Home';
 import Catalog from './pages/Catalog';
 import News from './pages/News';
 import AboutUs from './pages/AboutUs';
-import Login from './pages/Login'
-import Registration from './pages/Registration'
+import Login from './pages/Login';
+import Registration from './pages/Registration';
 import Layout from './components/Layout';
-import Cart from './pages/Cart'
 
 
 const layoutChildren = [
@@ -26,8 +25,8 @@ const layoutChildren = [
     element: <News />
   },
   {
-    path: 'cart',
-    element: <Cart />
+    path: 'about-us',
+    element: <AboutUs />
   },
   {
     path: 'login',
@@ -37,7 +36,6 @@ const layoutChildren = [
     path: 'registration',
     element: <Registration />
   },
-  
 ]
 
 const routes = [

@@ -32,7 +32,7 @@ const Carousel = () => {
         modifier: 1.5,
       }}
       autoplay={{
-        delay: 5000,
+        delay: 3000,
         disableOnInteraction: false,
       }}
       navigation

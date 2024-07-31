@@ -11,30 +11,41 @@ const products = {
       name: 'Nike Hat',
       description: 'A stylish Nike hat.',
       price: 25,
-      image: hatsImage
+      image: hatsImage,
+      rating: 4,
+      status: 'Used',
+      quantity: 1
     },
     {
       id: 2,
       name: 'Adidas Hat',
       description: 'A cool Adidas hat.',
       price: 30,
-      image: hatsImage
+      image: hatsImage,
+      rating: 5,
+      quantity: 1
     }
   ],
   phones: [
     {
-      id: 3,
+      id: 1,
       name: 'iPhone 15',
       description: 'The latest iPhone model.',
       price: 999,
       image: jacketsImage,
+      rating: 5,
+      status: 'Unused',
+      quantity: 1
     },
     {
-      id: 4,
+      id: 2,
       name: 'Samsung Galaxy A51',
       description: 'A popular Samsung phone.',
       price: 499,
-      image: shoesImage
+      image: shoesImage,
+      rating: 3,
+      status: 'Unused',
+      quantity: 1
     }
   ],
   jackets: [
@@ -43,30 +54,42 @@ const products = {
       name: 'Nike Hat',
       description: 'A stylish Nike hat.',
       price: 25,
-      image: jeansImage
+      image: jeansImage,
+      rating: 2,
+      status: 'Unused',
+      quantity: 1
     },
     {
       id: 2,
       name: 'Adidas Hat',
       description: 'A cool Adidas hat.',
       price: 30,
-      image: jacketsImage
+      image: jacketsImage,
+      rating: 3,
+      status: 'Used',
+      quantity: 1
     }
   ],
   shoes: [
     {
-      id: 3,
+      id: 1,
       name: 'iPhone 15',
       description: 'The latest iPhone model.',
       price: 999,
-      image: shoesImage
+      image: shoesImage,
+      rating: 1,
+      status: 'Unused',
+      quantity: 1
     },
     {
-      id: 4,
+      id: 2,
       name: 'Samsung Galaxy A51',
       description: 'A popular Samsung phone.',
       price: 499,
-      image: shoesImage
+      image: shoesImage,
+      rating: 4,
+      status: 'Unused',
+      quantity: 1
     }
   ],
   computers: [
@@ -75,30 +98,42 @@ const products = {
       name: 'Nike Hat',
       description: 'A stylish Nike hat.',
       price: 25,
-      image: hatsImage
+      image: hatsImage,
+      rating: 5,
+      status: 'Used',
+      quantity: 1
     },
     {
       id: 2,
       name: 'Adidas Hat',
       description: 'A cool Adidas hat.',
       price: 30,
-      image: jacketsImage
+      image: jacketsImage,
+      rating: 2,
+      status: 'Unused',
+      quantity: 1
     }
   ],
   accsesories: [
     {
-      id: 3,
+      id: 1,
       name: 'iPhone 15',
       description: 'The latest iPhone model.',
       price: 999,
-      image: jeansImage
+      image: jeansImage,
+      rating: 3,
+      status: 'Used',
+      quantity: 1
     },
     {
-      id: 4,
+      id: 2,
       name: 'Samsung Galaxy A51',
       description: 'A popular Samsung phone.',
       price: 499,
-      image: jeansImage
+      image: jeansImage,
+      rating: 4,
+      status: 'Unused',
+      quantity: 1
     }
   ],
   peripherials: [
@@ -107,30 +142,42 @@ const products = {
       name: 'Nike Hat',
       description: 'A stylish Nike hat.',
       price: 25,
-      image: jacketsImage
+      image: jacketsImage,
+      rating: 5,
+      status: 'Unused',
+      quantity: 1
     },
     {
       id: 2,
       name: 'Adidas Hat',
       description: 'A cool Adidas hat.',
       price: 30,
-      image: jacketsImage
+      image: jacketsImage,
+      rating: 3,
+      status: 'Unused',
+      quantity: 1
     }
   ],
   cabels: [
     {
-      id: 3,
+      id: 1,
       name: 'iPhone 15',
       description: 'The latest iPhone model.',
       price: 999,
-      image: shoesImage
+      image: shoesImage,
+      rating: 5,
+      status: 'Used',
+      quantity: 1
     },
     {
-      id: 4,
+      id: 2,
       name: 'Samsung Galaxy A51',
       description: 'A popular Samsung phone.',
       price: 499,
-      image: shoesImage
+      image: shoesImage,
+      rating: 1,
+      status: 'Unused',
+      quantity: 1
     }
   ],
   tvs: [
@@ -139,30 +186,42 @@ const products = {
       name: 'Nike Hat',
       description: 'A stylish Nike hat.',
       price: 25,
-      image: hatsImage
+      image: hatsImage,
+      rating: 4,
+      status: 'Unused',
+      quantity: 1
     },
     {
       id: 2,
       name: 'Adidas Hat',
       description: 'A cool Adidas hat.',
       price: 30,
-      image: jacketsImage
+      image: jacketsImage,
+      rating: 4,
+      status: 'Unused',
+      quantity: 1
     }
   ],
   monitors: [
     {
-      id: 3,
+      id: 1,
       name: 'iPhone 15',
       description: 'The latest iPhone model.',
       price: 999,
-      image: jacketsImage
+      image: jacketsImage,
+      rating: 2,
+      status: 'Unused',
+      quantity: 1
     },
     {
-      id: 4,
+      id: 2,
       name: 'Samsung Galaxy A51',
       description: 'A popular Samsung phone.',
       price: 499,
-      image: shoesImage
+      image: shoesImage,
+      rating: 3,
+      status: 'Used',
+      quantity: 1
     }
   ]
 };
