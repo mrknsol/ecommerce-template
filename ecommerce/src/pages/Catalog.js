@@ -16,12 +16,19 @@ const Catalog = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const category = params.get('category');
-  const items = products[category] || [];
 
-  const [filteredItems, setFilteredItems] = useState(items);
+  const [allProducts, setAllProducts] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
 
   useEffect(() => {
-    let filtered = items;
+    const allItems = Object.values(products).flat();
+    setAllProducts(allItems);
+  }, []);
+
+  useEffect(() => {
+    let itemsToFilter = category ? products[category] || [] : allProducts;
+
+    let filtered = itemsToFilter;
 
     if (filter.searchQuery) {
       filtered = filtered.filter(item =>
@@ -46,15 +53,15 @@ const Catalog = () => {
     }
 
     setFilteredItems(filtered);
-  }, [filter, items]);
+  }, [filter, category, allProducts]);
 
   const toggleCart = () => setIsCartOpen(!isCartOpen);
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
   };
-  const totalItems = useSelector(selectTotalItems);
 
+  const totalItems = useSelector(selectTotalItems);
 
   return (
     <div className="bg-white">
@@ -70,7 +77,6 @@ const Catalog = () => {
         )}
         <ShoppingCartIcon className="h-5 w-5" aria-hidden="true" />
         <span className="sr-only">Remove</span>
-        
       </button>
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 className="sr-only">Products</h2>
@@ -96,7 +102,7 @@ const Catalog = () => {
               </div>
             ))
           ) : (
-            <p>No products found in this category.</p>
+            <p>No products found.</p>
           )}
         </div>
       </div>
